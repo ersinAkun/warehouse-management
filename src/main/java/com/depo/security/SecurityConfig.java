@@ -33,10 +33,10 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and(). 
 				authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll().and().authorizeRequests()
-				.antMatchers("/login",
-						     "/register",
+				.antMatchers("/user/login",
+						     "/user/register",
 						     "/actuator/info",
-						     "actuator/health")
+						     "/actuator/health")
 				.permitAll().anyRequest().authenticated();
 		http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 		return http.build();

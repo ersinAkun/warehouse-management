@@ -17,4 +17,5 @@ public class ErrorMessage {
 
 	public static final String EMAIL_ALREADY_EXIST_MESSAGE = "Email already exist";
 
+	public static final String BUILTIN_MESSAGE = "Access denied for any changes(built-in)";
 }

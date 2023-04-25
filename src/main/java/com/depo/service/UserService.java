@@ -1,6 +1,7 @@
 package com.depo.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.depo.domain.Role;
 import com.depo.domain.User;
 import com.depo.enums.RoleType;
+import com.depo.exception.BuiltInException;
 import com.depo.exception.ConflictException;
 import com.depo.exception.ResourceNotFoundException;
 import com.depo.exception.message.ErrorMessage;
@@ -20,6 +22,8 @@ import com.depo.repository.UserRepository;
 import com.depo.requestDTO.UserRequestDTO;
 import com.depo.responseDTO.UserResponseDTO;
 import com.depo.security.SecurityUtils;
+
+
 
 @Service
 public class UserService {
@@ -89,4 +93,36 @@ public class UserService {
         return userResponseDTO;
 
     }
+
+	  public UserResponseDTO getUserByIdAdmin(Long userId) {
+       
+		  User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.USER_NOT_FOUND_MESSAGE));
+          UserResponseDTO userResponseDTO = userMapper.userToUserResponseDTO(user);
+
+        return userResponseDTO;
+    }
+	  
+	  // ========= UPDATE AUTH USER ======================
+	    public UserResponseDTO updateAuthUser(UserRequestDTO userRequestDTO) {
+
+	        User user = getCurrentUser();
+
+	        if (user.getBuilt_in()) {
+	            throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
+	        }
+
+	        user = userMapper.userRequestDTOToUser(userRequestDTO);
+	        userRepository.save(user);
+	        UserResponseDTO dto = userMapper.userToUserResponseDTO(user);
+
+	        return dto;
+	    }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 }
