@@ -15,4 +15,6 @@ public class ErrorMessage {
 	
 	public static final String ROLE_NOT_FOUND_MESSAGE = "Role not found";
 
+	public static final String EMAIL_ALREADY_EXIST_MESSAGE = "Email already exist";
+
 }
