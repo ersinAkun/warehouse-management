@@ -1,7 +1,6 @@
 package com.depo.service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,6 +21,7 @@ import com.depo.repository.UserRepository;
 import com.depo.requestDTO.UserRequestDTO;
 import com.depo.responseDTO.UserResponseDTO;
 import com.depo.security.SecurityUtils;
+
 
 
 
@@ -106,19 +106,30 @@ public class UserService {
 	    public UserResponseDTO updateAuthUser(UserRequestDTO userRequestDTO) {
 
 	        User user = getCurrentUser();
+	       // LocalDate createAtDate = user.getCreate_at();
 
 	        if (user.getBuilt_in()) {
 	            throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
 	        }
-
+	        
 	        user = userMapper.userRequestDTOToUser(userRequestDTO);
 	        userRepository.save(user);
+	        
 	        UserResponseDTO dto = userMapper.userToUserResponseDTO(user);
 
 	        return dto;
 	    }
 	  
-	  
+	    // ========= DELETE USER ID AUTH ======================
+	    public void deleteAuthUserById() {
+	        User user = getCurrentUser();
+	        
+	        if (user.getBuilt_in()) {
+	            throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
+	        }
+	        
+	      userRepository.delete(user);
+	    }
 	  
 	  
 	  

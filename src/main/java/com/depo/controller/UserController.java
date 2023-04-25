@@ -10,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ import com.depo.responseDTO.LoginResponseDTO;
 import com.depo.responseDTO.UserResponseDTO;
 import com.depo.security.jwt.JwtUtils;
 import com.depo.service.UserService;
+
 
 
 
@@ -69,7 +71,7 @@ public class UserController {
 		
 		
 		// ========= UPDATE USER ======================
-		@PutMapping("/auth")
+		@PutMapping("/update/auth")
 		@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
 		public ResponseEntity<UserResponseDTO> updateAuthUser(@Valid @RequestBody UserRequestDTO userRequestDTO) {
 
@@ -77,6 +79,15 @@ public class UserController {
 			return ResponseEntity.ok(dto);
 		}	
 		
+		// ========= DELETE USER ID AUTH ======================
+		@DeleteMapping("/delete/auth")
+		@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
+		public ResponseEntity<String> deleteUserIdByAuth() {
+			userService.deleteAuthUserById();
+
+			
+			return ResponseEntity.ok("Successfully deleted");
+		}
 		
 		
 }
