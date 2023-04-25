@@ -102,19 +102,23 @@ public class UserService {
         return userResponseDTO;
     }
 	  
-	  // ========= UPDATE AUTH USER ======================
+	// ========= UPDATE AUTH USER ======================
 	    public UserResponseDTO updateAuthUser(UserRequestDTO userRequestDTO) {
 
 	        User user = getCurrentUser();
-	       // LocalDate createAtDate = user.getCreate_at();
 
 	        if (user.getBuilt_in()) {
 	            throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
 	        }
-	        
-	        user = userMapper.userRequestDTOToUser(userRequestDTO);
+	            user.setEmail(userRequestDTO.getEmail());
+	            user.setFirst_name(userRequestDTO.getFirst_name());
+	            user.setLast_name(userRequestDTO.getLast_name());
+	            user.setPhone(userRequestDTO.getPhone());
+	            user.setUpdate_at(LocalDate.now());
+
+
 	        userRepository.save(user);
-	        
+
 	        UserResponseDTO dto = userMapper.userToUserResponseDTO(user);
 
 	        return dto;

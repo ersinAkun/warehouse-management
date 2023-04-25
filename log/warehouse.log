@@ -2995,3 +2995,344 @@ Caused by: java.lang.ClassNotFoundException: UserUpdateRequest
 2023-04-25 22:15:37,547 DEBUG [restartedMain] org.springframework.boot.web.servlet.filter.OrderedCharacterEncodingFilter:Filter 'characterEncodingFilter' configured for use
 2023-04-25 22:15:37,547 DEBUG [restartedMain] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean$1:Filter 'springSecurityFilterChain' configured for use
 2023-04-25 22:15:37,548 DEBUG [restartedMain] org.springframework.boot.web.servlet.filter.OrderedFormContentFilter:Filter 'formContentFilter' configured for use
+2023-04-25 22:15:37,797 DEBUG [restartedMain] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:Application Admin MBean registered with name 'org.springframework.boot:type=Admin,name=SpringApplication'
+2023-04-25 22:15:37,977 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
+2023-04-25 22:15:37,997 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-25 22:15:38,002 INFO  [restartedMain] com.depo.DepoApplication:Started DepoApplication in 1.623 seconds (JVM running for 1091.318)
+2023-04-25 22:15:38,003 DEBUG [restartedMain] org.springframework.boot.availability.ApplicationAvailabilityBean:Application availability state LivenessState changed to CORRECT
+2023-04-25 22:15:38,005 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener:Condition evaluation unchanged
+2023-04-25 22:15:38,006 DEBUG [restartedMain] org.springframework.boot.availability.ApplicationAvailabilityBean:Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-04-25 22:23:55,324 INFO  [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-04-25 22:23:55,325 DEBUG [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:Change set: %s[C:\Users\Asus\Documents\Work Space STS\warehouse-management\target\classes [C:\Users\Asus\Documents\Work Space STS\warehouse-management\target\classes\com\depo\service\UserService.class (MODIFY)]]
+2023-04-25 22:23:55,325 DEBUG [File Watcher] org.springframework.boot.devtools.restart.Restarter:Restarting application
+2023-04-25 22:23:55,326 DEBUG [Thread-15] org.springframework.boot.devtools.restart.Restarter:Stopping application
+2023-04-25 22:23:55,326 DEBUG [Thread-15] org.springframework.boot.availability.ApplicationAvailabilityBean:Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2023-04-25 22:23:55,326 DEBUG [Thread-15] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2e9f9ec9, started on Tue Apr 25 22:15:36 EET 2023
+2023-04-25 22:23:55,607 DEBUG [Thread-15] org.springframework.boot.devtools.restart.classloader.RestartClassLoader:Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@44c63ba8
+2023-04-25 22:23:55,608 DEBUG [Thread-15] org.springframework.boot.devtools.restart.Restarter:Starting application com.depo.DepoApplication with URLs [file:/C:/Users/Asus/Documents/Work%20Space%20STS/warehouse-management/target/classes/]
+2023-04-25 22:23:55,662 INFO  [restartedMain] com.depo.DepoApplication:Starting DepoApplication using Java 11.0.9 on DESKTOP-R35UM7O with PID 11700 (C:\Users\Asus\Documents\Work Space STS\warehouse-management\target\classes started by Asus in C:\Users\Asus\Documents\Work Space STS\warehouse-management)
+2023-04-25 22:23:55,663 DEBUG [restartedMain] com.depo.DepoApplication:Running with Spring Boot v2.7.6, Spring v5.3.24
+2023-04-25 22:23:55,663 INFO  [restartedMain] com.depo.DepoApplication:No active profile set, falling back to 1 default profile: "default"
+2023-04-25 22:23:55,663 DEBUG [restartedMain] org.springframework.boot.SpringApplication:Loading source class com.depo.DepoApplication
+2023-04-25 22:23:55,665 DEBUG [restartedMain] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@43b8a4eb
+2023-04-25 22:23:56,091 DEBUG [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory:Code archive: C:\Users\Asus\.m2\repository\org\springframework\boot\spring-boot\2.7.6\spring-boot-2.7.6.jar
+2023-04-25 22:23:56,091 DEBUG [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory:Code archive: C:\Users\Asus\.m2\repository\org\springframework\boot\spring-boot\2.7.6\spring-boot-2.7.6.jar
+2023-04-25 22:23:56,092 DEBUG [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory:None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2023-04-25 22:23:56,112 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8081 (http)
+2023-04-25 22:23:56,140 DEBUG [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2023-04-25 22:23:56,140 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 475 ms
+2023-04-25 22:23:56,207 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 22:23:56,290 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-25 22:23:56,500 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 22:23:56,699 DEBUG [restartedMain] org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertyResolver$DefaultResolver:Found key 'depo.app.jwtSecret' in PropertySource 'Config resource 'class path resource [application.yml]' via location 'optional:classpath:/'' with value of type String
+2023-04-25 22:23:56,699 DEBUG [restartedMain] org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertyResolver$DefaultResolver:Found key 'depo.app.jwtExpirationMs' in PropertySource 'Config resource 'class path resource [application.yml]' via location 'optional:classpath:/'' with value of type Integer
+2023-04-25 22:23:56,716 DEBUG [restartedMain] org.springframework.boot.web.servlet.ServletContextInitializerBeans:Mapping filters: springSecurityFilterChain urls=[/*] order=-100, filterRegistrationBean urls=[/*] order=2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, authTokenFilter urls=[/*] order=2147483647
+2023-04-25 22:23:56,716 DEBUG [restartedMain] org.springframework.boot.web.servlet.ServletContextInitializerBeans:Mapping servlets: dispatcherServlet urls=[/], messageDispatcherServlet urls=[/services/*]
+2023-04-25 22:23:56,717 DEBUG [restartedMain] org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter:Filter 'requestContextFilter' configured for use
+2023-04-25 22:23:56,717 DEBUG [restartedMain] com.depo.security.jwt.AuthTokenFilter:Filter 'authTokenFilter' configured for use
+2023-04-25 22:23:56,717 DEBUG [restartedMain] org.springframework.boot.web.servlet.filter.OrderedCharacterEncodingFilter:Filter 'characterEncodingFilter' configured for use
+2023-04-25 22:23:56,717 DEBUG [restartedMain] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean$1:Filter 'springSecurityFilterChain' configured for use
+2023-04-25 22:23:56,717 DEBUG [restartedMain] org.springframework.boot.web.servlet.filter.OrderedFormContentFilter:Filter 'formContentFilter' configured for use
+2023-04-25 22:23:56,969 DEBUG [restartedMain] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:Application Admin MBean registered with name 'org.springframework.boot:type=Admin,name=SpringApplication'
+2023-04-25 22:23:57,110 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
+2023-04-25 22:23:57,129 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-25 22:23:57,135 INFO  [restartedMain] com.depo.DepoApplication:Started DepoApplication in 1.518 seconds (JVM running for 1590.451)
+2023-04-25 22:23:57,136 DEBUG [restartedMain] org.springframework.boot.availability.ApplicationAvailabilityBean:Application availability state LivenessState changed to CORRECT
+2023-04-25 22:23:57,137 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener:Condition evaluation unchanged
+2023-04-25 22:23:57,137 DEBUG [restartedMain] org.springframework.boot.availability.ApplicationAvailabilityBean:Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-04-25 22:24:03,854 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:24:03,868 ERROR [http-nio-8081-exec-3] com.depo.security.jwt.AuthTokenFilter:User not Found query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2: 
+2023-04-25 22:25:11,499 ERROR [http-nio-8081-exec-5] com.depo.security.jwt.JwtUtils:JWT Token Validation Error
+2023-04-25 22:25:11,639 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:25:22,305 ERROR [http-nio-8081-exec-6] com.depo.security.jwt.JwtUtils:JWT Token Validation Error
+2023-04-25 22:25:22,310 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:26:16,946 ERROR [http-nio-8081-exec-7] com.depo.security.jwt.JwtUtils:JWT Token Validation Error
+2023-04-25 22:26:16,953 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:26:29,039 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:26:29,067 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:26:29,101 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL:
+    update
+        tbl_user 
+    set
+        built_in=?,
+        create_at=?,
+        email=?,
+        first_name=?,
+        last_name=?,
+        password=?,
+        phone=?,
+        status=?,
+        update_at=? 
+    where
+        id=?
+2023-04-25 22:27:22,941 ERROR [http-nio-8081-exec-9] com.depo.security.jwt.JwtUtils:JWT Token Validation Error
+2023-04-25 22:27:22,946 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:27:37,740 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:27:37,745 WARN  [http-nio-8081-exec-10] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver:Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-04-25 22:27:46,929 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:27:46,938 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL:
+    select
+        user0_.id as id1_5_0_,
+        role2_.id as id1_3_1_,
+        user0_.built_in as built_in2_5_0_,
+        user0_.create_at as create_a3_5_0_,
+        user0_.email as email4_5_0_,
+        user0_.first_name as first_na5_5_0_,
+        user0_.last_name as last_nam6_5_0_,
+        user0_.password as password7_5_0_,
+        user0_.phone as phone8_5_0_,
+        user0_.status as status9_5_0_,
+        user0_.update_at as update_10_5_0_,
+        role2_.type as type2_3_1_,
+        roles1_.user_id as user_id1_6_0__,
+        roles1_.role_id as role_id2_6_0__ 
+    from
+        tbl_user user0_ 
+    left outer join
+        tbl_user_role roles1_ 
+            on user0_.id=roles1_.user_id 
+    left outer join
+        tbl_role role2_ 
+            on roles1_.role_id=role2_.id 
+    where
+        user0_.email=?
+2023-04-25 22:27:46,944 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL:
+    delete 
+    from
+        tbl_user_role 
+    where
+        user_id=?
+2023-04-25 22:27:46,948 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL:
+    delete 
+    from
+        tbl_user 
+    where
+        id=?
+2023-04-25 22:28:02,814 INFO  [RMI TCP Connection(35)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:Application shutdown requested.
+2023-04-25 22:28:02,814 DEBUG [RMI TCP Connection(35)-127.0.0.1] org.springframework.boot.availability.ApplicationAvailabilityBean:Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2023-04-25 22:28:02,814 DEBUG [RMI TCP Connection(35)-127.0.0.1] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@43b8a4eb, started on Tue Apr 25 22:23:55 EET 2023
