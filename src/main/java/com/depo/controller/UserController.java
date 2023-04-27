@@ -89,5 +89,6 @@ public class UserController {
 			return ResponseEntity.ok("Successfully deleted");
 		}
 		
+		//crud tamamlandi devami 28.04 te
 		
 }
