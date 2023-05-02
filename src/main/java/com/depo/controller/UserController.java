@@ -1,3 +1,4 @@
+
 package com.depo.controller;
 
 import javax.validation.Valid;
@@ -89,6 +90,5 @@ public class UserController {
 			return ResponseEntity.ok("Successfully deleted");
 		}
 		
-		//crud tamamlandi devami 28.04 te
 		
 }
