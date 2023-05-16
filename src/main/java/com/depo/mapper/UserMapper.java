@@ -11,10 +11,10 @@ import com.depo.responseDTO.UserResponseDTO;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-
-    UserResponseDTO userToUserResponseDTO(User user);
-
-    User userRequestDTOToUser(UserRequestDTO userRequestDTO);
-
-    List<UserResponseDTO> map(List<User> userList);
+	
+	UserResponseDTO userToUserResponseDTO(User user);
+	
+	User userRequestDTOToUser(UserRequestDTO userRequestDTO);
+	
+	List<UserResponseDTO> map(List<User> userList);
 }

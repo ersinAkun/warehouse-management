@@ -41,7 +41,6 @@ public class SecurityConfig {
 		http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 		return http.build();
 	}
-						     
 
 //================ CORS ======================
 	@Bean

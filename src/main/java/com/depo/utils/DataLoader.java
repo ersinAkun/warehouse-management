@@ -3,14 +3,12 @@ package com.depo.utils;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 import com.depo.domain.Role;
 import com.depo.domain.User;
 import com.depo.enums.RoleType;
@@ -86,8 +84,8 @@ public class DataLoader implements ApplicationRunner {
 		customer.setPhone("555-555-5555");		
 		customer.setEmail("customer@warehouse.com");
 		customer.setStatus((byte) 1);
-		customer.setRoles(roles2);
 		customer.setCreate_at(LocalDate.now());
+		customer.setRoles(roles2);
 		customer.setBuilt_in(false);
 		String encodedPassword2 = passwordEncoder.encode("12345");
 		customer.setPassword(encodedPassword2);

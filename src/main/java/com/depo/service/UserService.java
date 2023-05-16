@@ -1,6 +1,7 @@
 package com.depo.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,118 +24,116 @@ import com.depo.responseDTO.UserResponseDTO;
 import com.depo.security.SecurityUtils;
 
 
-
-
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
-    @Autowired
-    private RoleService roleService;
+	@Autowired
+	private RoleService roleService;
 
-    private PasswordEncoder passwordEncoder;
+	private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private UserMapper userMapper;
+	@Autowired
+	private UserMapper userMapper;
 
-    public UserService(UserRepository userRepository, RoleService roleService, @Lazy PasswordEncoder passwordEncoder,
-            UserMapper userMapper) {
+	public UserService(UserRepository userRepository, RoleService roleService, @Lazy PasswordEncoder passwordEncoder,
+			UserMapper userMapper) {
 
-        this.userRepository = userRepository;
-        this.roleService = roleService;
-        this.passwordEncoder = passwordEncoder;
-        this.userMapper = userMapper;
+		this.userRepository = userRepository;
+		this.roleService = roleService;
+		this.passwordEncoder = passwordEncoder;
+		this.userMapper = userMapper;
 
-    }
+	}
 
-    public User getCurrentUser() {
+	public User getCurrentUser() {
 
-        String email = SecurityUtils.getCurrentUserLogin()
-                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.PRINCIPAL_FOUND_MESSAGE));
-        User user = getUserByEmail(email);
-        return user;
+		String email = SecurityUtils.getCurrentUserLogin()
+				.orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.PRINCIPAL_FOUND_MESSAGE));
+		User user = getUserByEmail(email);
+		return user;
 
-    }
+	}
 
-    public User getUserByEmail(String email) {
+	public User getUserByEmail(String email) {
 
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.USER_NOT_FOUND_MESSAGE));
-        return user;
-    }
+		User user = userRepository.findByEmail(email)
+				.orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.USER_NOT_FOUND_MESSAGE));
+		return user;
+	}
 
-    // ============= Create User============================
-    public UserResponseDTO saveUser(UserRequestDTO registerRequest) {
+	// ============= Register User============================
+	public UserResponseDTO saveUser(UserRequestDTO registerRequest) {
 
-        if (userRepository.existsByEmail(registerRequest.getEmail())) {
-            throw new ConflictException(ErrorMessage.EMAIL_ALREADY_EXIST_MESSAGE);
-        }
+		if (userRepository.existsByEmail(registerRequest.getEmail())) {
+			throw new ConflictException(ErrorMessage.EMAIL_ALREADY_EXIST_MESSAGE);
+		}
 
-        Role role = roleService.findByType(RoleType.ROLE_CUSTOMER);
-        Set<Role> roles = new HashSet<>();
-        roles.add(role);
+		Role role = roleService.findByType(RoleType.ROLE_CUSTOMER);
+		Set<Role> roles = new HashSet<>();
+		roles.add(role);
 
-        String encodedPassword = passwordEncoder.encode(registerRequest.getPassword());
+		String encodedPassword = passwordEncoder.encode(registerRequest.getPassword());
 
-        User user = userMapper.userRequestDTOToUser(registerRequest);
+		User user = userMapper.userRequestDTOToUser(registerRequest);
 
-        user.setStatus((byte) 0);
-        user.setCreate_at(LocalDate.now());
-        user.setRoles(roles);
-        user.setBuilt_in(false);
-        user.setPassword(encodedPassword);
-        userRepository.save(user);
+		user.setStatus((byte) 0);
+		user.setCreate_at(LocalDate.now());
+		user.setRoles(roles);
+		user.setBuilt_in(false);
+		user.setPassword(encodedPassword);
+		userRepository.save(user);
 
-        UserResponseDTO userResponseDTO = userMapper.userToUserResponseDTO(user);
+		UserResponseDTO userResponseDTO = userMapper.userToUserResponseDTO(user);
 
+		return userResponseDTO;
 
-        return userResponseDTO;
+	}
 
-    }
+	// ========= GET USER BY ID - ADMIN ======================
+	public UserResponseDTO getUserByIdAdmin(Long userId) {
+		User user = userRepository.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.USER_NOT_FOUND_MESSAGE));
 
-	  public UserResponseDTO getUserByIdAdmin(Long userId) {
-       
-		  User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.USER_NOT_FOUND_MESSAGE));
-          UserResponseDTO userResponseDTO = userMapper.userToUserResponseDTO(user);
+		UserResponseDTO userResponseDTO = userMapper.userToUserResponseDTO(user);
 
-        return userResponseDTO;
-    }
-	  
+		return userResponseDTO;
+	}
+
 	// ========= UPDATE AUTH USER ======================
-	    public UserResponseDTO updateAuthUser(UserRequestDTO userRequestDTO) {
+	public UserResponseDTO updateAuthUser(UserRequestDTO userRequestDTO) {
 
-	        User user = getCurrentUser();
+		User user = getCurrentUser();
+		
+		if (user.getBuilt_in()) {
+			throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
+		}
+			user.setEmail(userRequestDTO.getEmail());
+	        user.setFirst_name(userRequestDTO.getFirst_name());
+	        user.setLast_name(userRequestDTO.getLast_name());
+	        user.setPhone(userRequestDTO.getPhone());
+	        user.setUpdate_at(LocalDate.now());
+		
+	
+		userRepository.save(user);
 
-	        if (user.getBuilt_in()) {
-	            throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
-	        }
-	            user.setEmail(userRequestDTO.getEmail());
-	            user.setFirst_name(userRequestDTO.getFirst_name());
-	            user.setLast_name(userRequestDTO.getLast_name());
-	            user.setPhone(userRequestDTO.getPhone());
-	            user.setUpdate_at(LocalDate.now());
+		UserResponseDTO dto = userMapper.userToUserResponseDTO(user);
 
+		return dto;
+	}
 
-	        userRepository.save(user);
+	// ========= DELETE USER ID AUTH ======================
+	public void deleteAuthUserById() {
+		User user = getCurrentUser();
 
-	        UserResponseDTO dto = userMapper.userToUserResponseDTO(user);
+		if (user.getBuilt_in()) {
+			throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
+		}
 
-	        return dto;
-	    }
-	  
-	    // ========= DELETE USER ID AUTH ======================
-	    public void deleteAuthUserById() {
-	        User user = getCurrentUser();
-	        
-	        if (user.getBuilt_in()) {
-	            throw new BuiltInException(ErrorMessage.BUILTIN_MESSAGE);
-	        }
-	        
-	      userRepository.delete(user);
-	    }
-	  
-	  
-	  
+		userRepository.delete(user);
+
+	}
+
 }

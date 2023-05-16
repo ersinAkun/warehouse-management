@@ -44,7 +44,7 @@ public class JwtUtils {
 			return true;
 		} catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException |
 				SignatureException | IllegalArgumentException e ) {
-			logger.error(String.format(ErrorMessage.JWTTOKEN_ERROR_MESSAGE, e.getMessage()));
+			logger.error(ErrorMessage.JWTTOKEN_ERROR_MESSAGE);
 		}
 		return false;
 	}	

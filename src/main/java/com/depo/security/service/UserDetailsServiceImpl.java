@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.depo.domain.User;
 import com.depo.service.UserService;
 
-
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

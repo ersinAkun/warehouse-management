@@ -2,7 +2,6 @@ package com.depo.domain;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -52,12 +51,12 @@ public class Product {
 	@Column
 	private LocalDate update_at;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
-	
+
 	@OneToMany
-	@JoinColumn(name = "depo_id")
+	@JoinColumn(name = "product_id")
 	private List<Depo> depo;
 
 }

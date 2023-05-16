@@ -19,9 +19,8 @@ public class RoleService {
 		
 		
 		return roleRepository.findByType(roleType).orElseThrow(() -> new ResourceNotFoundException(
-                ErrorMessage.ROLE_NOT_FOUND_MESSAGE));
-   
+				ErrorMessage.ROLE_NOT_FOUND_MESSAGE));
 	}
-}	
 
 
+}
